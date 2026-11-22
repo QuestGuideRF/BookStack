@@ -26,13 +26,7 @@ npm run build
 php artisan serve
 ```
 
-Для запуска через Docker Compose:
-
-```bash
-docker compose up
-```
-
-По умолчанию dev-контейнер публикует приложение на `http://localhost:8080`, если переменная `DEV_PORT` не переопределена.
+В этой копии репозитория отсутствует файл `docker-compose.yml`, поэтому команда `docker compose up` из корня проекта не поддерживается без собственной конфигурации. Для локальной разработки используйте инструкции установки PHP/Composer и Node.js выше.
 
 ## 📦 Установка зависимостей
 
@@ -58,8 +52,7 @@ BookStack/
 ├─ tests/                       # PHPUnit-тесты
 ├─ themes/                      # пользовательские темы
 ├─ composer.json                # PHP-зависимости и команды
-├─ package.json                 # npm-зависимости и команды
-└─ docker-compose.yml           # локальный Docker-запуск
+└─ package.json                 # npm-зависимости и команды
 ```
 
 ## 🛠 Использование
@@ -79,7 +72,7 @@ npm test
 ## ⚙️ Конфигурация
 
 - Основные переменные окружения находятся в `.env.example` и `.env.example.complete`.
-- `APP_LANG=ru` добавлен в `.env.example` и `docker-compose.yml`.
+- Локаль приложения настраивается через `APP_LANG` в `.env.example` (перенесите значение в `.env`).
 - Значения `locale`, `default_locale`, `fallback_locale` и `faker_locale` настроены в `app/Config/app.php`.
 - PHPUnit настроен через `phpunit.xml`.
 - Jest настроен через `jest.config.ts`.
